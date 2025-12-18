@@ -1,66 +1,176 @@
-# Saludar
-salutació = ("Bon dia, em dic Padelnet! Com estàs? T'ajudaré tot el possible amb tot lo relacionat amb el pàdel.")
-print(salutació)
+import random
+# Funció per respondre preguntes sobre pàdel
+def fer_pregunta(pregunta):
+    pregunta = pregunta.lower()
 
-# Preguntar el Nom
-nom = input("Com et dius? ")
-print("Hola " + nom + ", encantat de coneixe't!!!")
+    # Reglament i puntuació
+    if "regles" in pregunta or "normes" in pregunta:
+        return "Les regles del pàdel són semblants al tennis, però amb parets: la pilota pot rebotar i continuar en joc després del primer bot. 🎾"
+    elif "servei" in pregunta or "sac" in pregunta or "treta" in pregunta:
+        return "El servei es fa en diagonal, per sota del maluc, i ha de botar dins del quadre contrari. 🙌"
+    elif "puntuació" in pregunta or "marcador" in pregunta:
+        return "La puntuació és igual que al tennis: 15, 30, 40 i joc. Els sets es guanyen arribant a 6 jocs amb dos de diferència. 🧮"
+    elif "empate" in pregunta or "iguals" in pregunta:
+        return "Quan s'arriba a 40-40, es diu 'iguals'. Cal guanyar dos punts seguits per endur-se el joc. 🔁"
+    elif "parets" in pregunta or "mur" in pregunta:
+        return "Al pàdel, pots utilitzar les parets després del bot de la pilota per continuar el punt. És part de l'estratègia! 🧱"
+
+    # Copes i tècniques
+    elif "bandeja" in pregunta:
+        return "La bandeja és un cop aeri defensiu, amb efecte tallat, ideal per mantenir la posició a la xarxa. 💫"
+    elif "víbora" in pregunta or "vibora" in pregunta:
+        return "La víbora és semblant a la bandeja però més agressiva, buscant el punt guanyador. 🐍"
+    elif "globus" in pregunta:
+        return "El globus és un cop alt que obliga els rivals a recular. Perfecte per guanyar posició. 🎈"
+    elif "remat" in pregunta or "smash" in pregunta:
+        return "El remat o smash és un cop fort per tancar el punt, generalment després d'un globus mal fet. 💥"
+    elif "bajada" in pregunta or "paret" in pregunta:
+        return "La bajada de paret és un cop potent després de deixar que la pilota reboti a la paret del fons. 🔙"
+
+    # Jugadors i història
+    elif "millor jugador" in pregunta or ("jugador" in pregunta and "millor" in pregunta):
+        return "Actualment, els millors jugadors són Arturo Coello i Agustín Tapia. 🔥"
+    elif "belasteguin" in pregunta or "bela" in pregunta:
+        return "Fernando Belasteguín és una llegenda del pàdel: va ser número 1 del món durant 16 anys seguits. 👑"
+    elif "lebron" in pregunta:
+        return "Juan Lebrón és un dels jugadors més explosius i tècnics, conegut pel seu remat increïble. ⚡"
+    elif "galan" in pregunta:
+        return "Alejandro Galán destaca pel seu físic i el seu joc agressiu a la xarxa. 💪"
+    elif "tapia" in pregunta:
+        return "Agustín Tapia és un talent argentí amb un estil espectacular i precís. 🎯"
+    elif "coello" in pregunta:
+        return "Arturo Coello és una bèstia! Un dels més potents i constants del circuit. 💥"
+    elif "origen" in pregunta or "historia" in pregunta:
+        return "El pàdel va néixer a Mèxic als anys 60 gràcies a Enrique Corcuera, que va crear la primera pista al seu jardí. 🇲🇽"
+
+    # Material i equipament
+    elif "pala" in pregunta or "raqueta" in pregunta:
+        return "Les pales de pàdel no tenen cordatge, són sòlides amb forats i varien segons el nivell i l’estil de joc. 🎾"
+    elif "marca" in pregunta:
+        return "Les marques més famoses són Bullpadel, Nox, Adidas, Wilson, Siux i Head. 🏷️"
+    elif "pilota" in pregunta:
+        return "Les pilotes de pàdel són semblants a les de tennis, però amb menys pressió perquè rebotin menys. 🟡"
+    elif "sabatilles" in pregunta:
+        return "Les sabatilles ideals de pàdel tenen sola espiga per evitar relliscar a la pista. 👟"
+    elif "grip" in pregunta or "overgrip" in pregunta:
+        return "L'overgrip serveix per millorar l’adherència i evitar que la pala et rellisqui de la mà. ✋"
+
+    # Pistes i espais
+    elif "pista" in pregunta:
+        return "Una pista de pàdel fa 10x20 metres i està envoltada de parets de vidre o malla metàl·lica. 📏"
+    elif "terra" in pregunta or "sorra" in pregunta:
+        return "Les pistes de pàdel tenen sorra per millorar el rebot i evitar lesions al genoll. 🏖️"
+    elif "indoor" in pregunta or "exterior" in pregunta:
+        return "El pàdel pot jugar-se tant a l’aire lliure com en pistes cobertes. L’indoor evita el vent i la pluja. 🌦️"
+
+    # Tornejos i competicions
+    elif "torneig" in pregunta or "competicio" in pregunta:
+        return "Els tornejos més importants són del circuit Premier Padel i el World Padel Tour. 🌍"
+    elif "premier" in pregunta:
+        return "El circuit Premier Padel és actualment el més prestigiós i està reconegut per la FIP. 🏆"
+    elif "world padel tour" in pregunta or "wpt" in pregunta:
+        return "El World Padel Tour va ser el circuit principal fins al 2024, abans que Premier Padel el substituís. 🥇"
+
+    # Estratègia i joc en equip
+    elif "estrategia" in pregunta or "posicio" in pregunta:
+        return "Al pàdel, la millor estratègia és jugar en equip, ocupar la xarxa i controlar el centre. 🎯"
+    elif "com guanyar" in pregunta or "consell" in pregunta:
+        return "Sigues pacient, juga amb globus i aprofita els errors del rival. La clau és la constància. 🧘"
+    elif "parella" in pregunta:
+        return "La comunicació amb la teva parella és essencial: parleu, animeu-vos i coordineu els moviments. 🤝"
+
+    # Altres
+    elif "entrenament" in pregunta or "practica" in pregunta:
+        return "Practicar la sortida de paret i la volea t’ajudarà molt a millorar. 💪"
+    elif "nivell" in pregunta or "millorar" in pregunta:
+        return "Per millorar el teu nivell, juga sovint, observa partits professionals i entrena el físic. 📈"
+    elif "curiositat" in pregunta:
+        return "Sabies que a Espanya hi ha més de 20.000 pistes de pàdel? És el segon esport més practicat! 🇪🇸"
+    elif "federacio" in pregunta or "fip" in pregunta:
+        return "La Federació Internacional de Pàdel (FIP) regula el joc i organitza tornejos mundials. 🌐"
+
+    else:
+        return "Hmm... no estic segur d’això 🤔. Però puc buscar-ho la pròxima vegada!"
+
+
+# Funció per explicar un acudit
+def explicar_acudit():
+    acudits = [
+        "Per què el jugador de pàdel va anar amb una escala al partit? Perquè volia arribar més alt a la xarxa! 😂",
+        "Com saps que algú juga a pàdel? No et preocupis, t’ho dirà abans dels cinc primers minuts! 😜",
+        "Per què el jugador de pàdel mai té gana? Perquè sempre està fent *serveis*! 🍽️😂",
+        "Saps per què el globus és el cop preferit de molts jugadors? Perquè sempre està per les núvols! ☁️",
+        "Per què els jugadors de pàdel són tan bons amics? Perquè mai deixen sola la seva parella! 🤝😂",
+        "Què diu un jugador de pàdel després d’un mal cop? ‘Era tàctic!’ 😅",
+        "Per què el jugador de pàdel va trencar amb la seva parella? Perquè no li feia *bandeja* al cor! 💔🎾",
+        "Com es diu un jugador de pàdel sense pala? Un espectador! 👀",
+        "Per què els jugadors de pàdel no juguen a l’amagatall? Perquè sempre acaben a la xarxa! 😂",
+        "Quin és el menjar preferit dels jugadors de pàdel? Els *globus*! 🍽️🎈",
+        "Saps per què el pàdel és com l’amor? Si no tens bona parella... no hi ha manera de guanyar! ❤️🎾"
+    ]
+    return random.choice(acudits)
+# Salutació
+print("Bon dia! 👋 Em dic Padelnet, el teu assistent de pàdel virtual!")
+
+nom = input("Com et dius? ").strip().capitalize()
+print(f"Encantat de coneixe't, {nom}! 😄 T’ajudaré en tot el que pugui sobre pàdel.")
 
 # Pregunta 1
-p1_resposta = input("T'agrada el pàdel? ").lower()
+p1 = input("T’agrada el pàdel? (sí/no) ").strip().lower()
+if p1 not in ["si", "sí", "no"]:
+    p1 = input("Respon amb 'sí' o 'no', si us plau: ").strip().lower()
 
-usuari_agrada_padel = "no"
-
-# Resposta segons la primera pregunta
-if "si" in p1_resposta:
-    print("Oh yeah!")
-    usuari_agrada_padel = "si"
+if p1 == "no":
+    print(f"D’acord, {nom}! Potser t’animes un altre dia 😉. Fins aviat!")
 else:
-    print("Adeu, quan vulguis parlem ;)")
+    print("Genial! 🎾 El pàdel és un esport increïble!")
 
-if usuari_agrada_padel == "si":
-    # Pregunta 2 i guarda la resposta en jugador
-    jugador = input("Quin és el teu jugador preferit? ")
-
-    # Resposta si el jugador és conegut
-    if jugador in [
-        "Agustin Tapia", "Arturo Coello", "Alejandro Galan", "Federico Chingotto", "Franco Stupaczuk",
-        "Juan Lebron", "Miguel Yanguas", "Jorge Nieto", "Martin Di Nenno", "Jon Sanz",
-        "Lucas Bergamini", "Francisco Navarro", "Jeronimo Gonzalez", "Pablo Cardona", "Eduardo Alonso",
-        "Francisco Guerrero", "Leandro Augsburger", "Javier Garrido", "Juan Tello", "Alejandro Arroyo",
-        "Jairo Bautista", "Alejandro Ruiz", "Javier Leal", "Alex Chozas", "Javier Garcia",
-        "Javier Barahona", "Juanlu Esbri", "Jose Antonio Diestro", "Leonel Daniel Aguirre", "Maximiliano Sanchez",
-        "Inigo Jofre", "Gonzalo Gabriel Alfonso", "Lucas Campagnolo", "Carlos Daniel Gutierrez", "Victor Ruiz",
-        "Valentino Gabriel Libaak", "Miguel Deus", "Nuno Deus", "Francisco Manuel Gil", "Jose Jimenez Casas",
-        "Pedro Melendez", "Nicolas Suescun", "Diego Ramos", "Gonzalo Rubio", "Ramiro Moyano",
-        "Juan Manuel Restivo", "Javier Valdés", "Martin Andornino", "Facundo Dominguez", "Juan Pablo Cozzolino"
-    ]:
-        print("Guauuu! És un gran jugador!!! És dels millors del món.")
+    # Pregunta 2
+    jugador = input("Quin és el teu jugador preferit? ").strip().title()
+    if jugador in ["Agustin Tapia", "Arturo Coello", "Alejandro Galan", "Juan Lebron", "Fernando Belasteguin"]:
+        print(f"Sí! {jugador} és un autèntic crac! 🔥")
     else:
-        print("No el conec gaire, però segur que és un crack!")
+        print(f"No conec gaire a {jugador}, però segur que és un gran jugador! 💪")
 
     # Pregunta 3
-    guanyador = input("Qui creus que guanyarà el pròxim torneig? ")
-    print("Interessant! Veurem si tens raó ;)")
+    guanyador = input("I qui creus que guanyarà el pròxim torneig? 🏆 ").strip().title()
+    print(f"Bona aposta! {guanyador} podria tenir moltes opcions si juga al seu millor nivell. 💪")
 
-    # Pregunta 4
-    ultima_pregunta = input("Vols que et recomani unes pales de pàdel segons el teu nivell? ").lower()
+    # Bucle principal(pregunta,acudit,sortir)
+    while True:
+        accio = input("\nVols fer una 'pregunta', escoltar un 'acudit' o 'sortir'? ").strip().lower()
+        if accio == "sortir":
+            print(f"Fins aviat, {nom}! 👋 Que el teu pròxim partit sigui ple de victòries! 🏆")
+            break
+        elif accio == "pregunta":
+            pregunta = input("Fes-me la teva pregunta sobre pàdel: ")
+            print(fer_pregunta(pregunta))
+        elif accio == "acudit":
+            print(explicar_acudit())
+        else:
+            print("No t’he entès 🤔. Escriu 'pregunta', 'acudit' o 'sortir'.")
+Padelnet.py
+Padelnet.py s'està mostrant.
+4-Crea el teu bot de conversa - [Versió final]
+Ramiro Silveyra Gonzalez
+•
+20 d’oct. (Darrera modificació: 8 de des.)
+Tasca no Avaluable
+•
+344,44
+/400
+344,44 punts de 400 possibles
+Data de venciment: 2 de nov.
+Lliura aquí l'arxiu amb el codi python, que té amb una extensió [.py]. Si no ho fas així, no accepto la teva entrega.
 
-    if "si" in ultima_pregunta:
-        print("Perfecte! Si estàs començant, et recomano una pala lleugera com Siux o Black Crown. Si ets un nivell intermedi, una mica més dura com Nox o Wilson. I si ja ets professional, una pala híbrida d'atac et pot anar genial!")
-    else:
-        print("Cap problema! Si canvies d’opinió, t’ajudaré encantat.")
+Recorda afegir comentaris al teu codi, totes les línies de codi han d'estar comentades/explicades.
+ 
+La prova de codi et preguntaré sobre el teu codi.
+plantilla.py
+Text
 
-    # Pregunta 5
-    saber_més = input("Vols saber alguna cosa més sobre pàdel? ").lower()
-    if "si" in saber_més:
-        print("És el Josue Hernandez! També va ser un dels grans jugadors quan el pàdel encara no era famós!!!!")
-    else:
-        print("Cap problema, pots preguntar-me quan vulguis! :)")
+775/900
+100/100
+100/100
+100/100
 
-    # Pregunta 6
-    altra_pregunta = input("Fes qualsevol pregunta sobre pàdel i la respondré! Vols fer-ne alguna ara? ").lower()
-    if "si" in altra_pregunta:
-        print("El jugador que per més anys ha estat número 1 és Fernando Belasteguín, un jugador que va destacar pel seu globus i la seva bandeja!")
-    else:
-        print("D’acord! Quan vulguis, podem parlar més sobre pàdel ;)")
